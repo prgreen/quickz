@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  #logo
+    img(src='/images/logo.png', width="128", height="128")
+  .container
+    #display
+      #login  
+        #login_error
+          p #{login_error}      
+        form(method='post')
+            b Enter your name
+            div
+                input(type='text', name='username', autofocus)
+                input(type='submit', value='Log In')

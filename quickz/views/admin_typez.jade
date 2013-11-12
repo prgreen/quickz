@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  #logo
+    img(src='/images/logo.png', width="64", height="64")
+  .container
+    p Enter text to add to database for Typez games. Only text is required, the rest is optional. Submitted texts are chosen randomly for the game.
+    p You will be redirected automatically after insertion.
+  .space
+  .container
+    form#typez_line(method="post")
+      p title
+      input(type="text", id="typez_title", name="typez_title")
+      p author
+      input(type="text", id="typez_author", name="typez_author")
+      p text
+      input(type="text", id="typez_text", name="typez_text", autofocus)
+      input(type="submit", value="Insert into database")
+  .space
+  #footer
+    a(href="/logout") logout

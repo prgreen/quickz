@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  #logo
+    img(src='/images/logo.png', width="64", height="64")
+    a(href="/logout", class="linkbutton") logout
+  .container
+    p Type all the words below!
+    #level
+    #timer
+  .space
+  .noselect
+    .container
+      #text_to_type(unselectable= "on")
+  .space
+  .container
+    form#typez_line(method="post")
+      input(type="text", id="typez_input", name="typez_input", autofocus)
+      input(type="submit", value="Enter")
+  .space
+  .container
+    ul#user_list
+      - each val,user in users
+        li(id= user)= user    
+  script(src="/javascripts/game_typez.js")

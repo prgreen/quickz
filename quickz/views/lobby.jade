@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  #logo
+    a(href="/game/typez", class="linkbutton") play
+    img(src='/images/logo.png', width="64", height="64")
+    a(href="/logout", class="linkbutton") logout
+  .container
+    #display
+      h4 Welcome #{username}
+  .space
+  .container
+    textarea#lobby_chat(rows="20", cols="40", readonly)
+    form#chatline(method="post")
+      input(type="text", id="chat_input", name="chat_input", autofocus)
+      input(type="submit", value="Enter")
+  .space
+  .container
+    p All users online:
+    ul#user_list
+      - each val,user in users
+        li(id= user)= user    
+  script(src="/javascripts/lobby_client.js")

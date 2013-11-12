@@ -1,0 +1,5 @@
+syntax: glob
+public/images/**
+public/sounds/**
+node_modules/**
+
